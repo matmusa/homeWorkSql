@@ -1,0 +1,372 @@
+Server [localhost]:
+Database [postgres]:
+Port [5432]:
+Username [postgres]:
+Пароль пользователя postgres:
+psql (15.2)
+ПРЕДУПРЕЖДЕНИЕ: Кодовая страница консоли (866) отличается от основной
+                страницы Windows (1251).
+                8-битовые (русские) символы могут отображаться некорректно.
+                Подробнее об этом смотрите документацию psql, раздел
+                "Notes for Windows users".
+Введите "help", чтобы получить справку.
+
+postgres=# create table employee(
+postgres(# id serial primary key,
+postgres(# first_name varchar(50)not null,
+postgres(# last_name varchar(50)not null,
+postgres(# age int not null,
+postgres(# emaill varchar(150)unique
+postgres(# );
+ОШИБКА:  отношение "employee" уже существует
+postgres=# insert into employee(
+postgres(# first_name,last_name,age,emaill)
+postgres-# values('Matmusa','Abduvokhob u,21,matmusa@gmaill.com);
+postgres'#
+postgres'# ');
+ОШИБКА:  INSERT содержит больше целевых столбцов, чем выражений
+СТРОКА 2: first_name,last_name,age,emaill)
+                               ^
+postgres=# insert into employee(
+postgres(# first_name,last_name,age,emaill)
+postgres-#  values('Matmusa','Abduvokhob u',21,'matmusa@gmaill.com');
+INSERT 0 1
+postgres=# \d emlpoyee
+Отношение "emlpoyee" не найдено.
+postgres=# \d employee
+                                              ╥рсышЎр "public.employee"
+  ╤ЄюысхЎ   |          ╥шя           | ╧Ёртшыю ёюЁЄшЁютъш | ─юяєёЄшьюёЄ№ NULL |             ╧ю єьюыўрэш■
+------------+------------------------+--------------------+-------------------+--------------------------------------
+ id         | integer                |                    | not null          | nextval('employee_id_seq'::regclass)
+ first_name | character varying(50)  |                    |                   |
+ last_name  | character varying(50)  |                    |                   |
+ age        | integer                |                    |                   |
+ emaill     | character varying(150) |                    |                   |
+╚эфхъё√:
+    "employee_pkey" PRIMARY KEY, btree (id)
+    "employee_emaill_key" UNIQUE CONSTRAINT, btree (emaill)
+
+
+postgres=# \d
+                       ╤яшёюъ юЄэю°хэшщ
+ ╤їхьр  |         ╚ь          |        ╥шя         | ┬ырфхыхЎ
+--------+---------------------+--------------------+----------
+ public | area                | ЄрсышЎр            | postgres
+ public | area_id_seq         | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | areas               | ЄрсышЎр            | postgres
+ public | areas_id_seq        | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | capital             | ЄрсышЎр            | postgres
+ public | capital_id_seq      | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | client              | ЄрсышЎр            | postgres
+ public | client_id_seq       | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | country             | ЄрсышЎр            | postgres
+ public | country_id_seq      | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | coutry              | ЄрсышЎр            | postgres
+ public | coutry_id_seq       | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | districts           | ЄрсышЎр            | postgres
+ public | districts_id_seq    | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | earth               | ЄрсышЎр            | postgres
+ public | earth_id_seq        | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | employee            | ЄрсышЎр            | postgres
+ public | employee_id_seq     | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | galaxy              | ЄрсышЎр            | postgres
+ public | galaxy_id_seq       | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | neighborhood        | ЄрсышЎр            | postgres
+ public | neighborhood_id_seq | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | people              | ЄрсышЎр            | postgres
+ public | people_id_seq       | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | planet              | ЄрсышЎр            | postgres
+ public | planet_id_seq       | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | products            | ЄрсышЎр            | postgres
+ public | products_id_seq     | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | region              | ЄрсышЎр            | postgres
+ public | region_id_seq       | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | regions             | ЄрсышЎр            | postgres
+ public | regions_id_seq      | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | salesman            | ЄрсышЎр            | postgres
+ public | salesman_id_seq     | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | shops               | ЄрсышЎр            | postgres
+ public | shops_id_seq        | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | star_systems        | ЄрсышЎр            | postgres
+ public | star_systems_id_seq | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | students            | ЄрсышЎр            | postgres
+ public | students_id_seq     | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | universe            | ЄрсышЎр            | postgres
+ public | universe_id_seq     | яюёыхфютрЄхы№эюёЄ№ | postgres
+ public | village             | ЄрсышЎр            | postgres
+ public | village_id_seq      | яюёыхфютрЄхы№эюёЄ№ | postgres
+(44 ёЄЁюъш)
+
+
+postgres=# \dt employee
+            ╤яшёюъ юЄэю°хэшщ
+ ╤їхьр  |   ╚ь     |   ╥шя   | ┬ырфхыхЎ
+--------+----------+---------+----------
+ public | employee | ЄрсышЎр | postgres
+(1 ёЄЁюър)
+
+
+postgres=# select * from employee;
+ id | first_name |  last_name   | age |       emaill
+----+------------+--------------+-----+--------------------
+  1 | Matmusa    | Abduvokhob u |  21 | matmusa@gmaill.com
+(1 ёЄЁюър)
+
+
+postgres=# drop table employee;
+DROP TABLE
+postgres=#  select * from employee;
+ОШИБКА:  отношение "employee" не существует
+СТРОКА 1: select * from employee;
+                        ^
+postgres=# insert into employee(
+postgres(# first_name,last_name,age,emaill)
+postgres-# values('Matmusa','Abduvokhob uulu',21,'matmusa@gmaill.com'),
+postgres-# ('Maksat','Tashtanov',34,'tashtanov@gmaill.com'),
+postgres-# ('Uulzhan','Tashtanova'42,'uulzhan@gmaill.com');
+ОШИБКА:  ошибка синтаксиса (примерное положение: "42")
+СТРОКА 5: ('Uulzhan','Tashtanova'42,'uulzhan@gmaill.com');
+                                 ^
+postgres=# insert into employee(
+postgres(#  first_name,last_name,age,emaill)
+postgres-#  values('Matmusa','Abduvokhob uulu',21,'matmusa@gmaill.com'),
+postgres-#  ('Maksat','Tashtanov',34,'tashtanov@gmaill.com'),
+postgres-#  ('Uulzhan','Tashtanova',42,'uulzhan@gmaill.com');
+ОШИБКА:  отношение "employee" не существует
+СТРОКА 1: insert into employee(
+                      ^
+postgres=# create table employee(
+postgres(# id serial primary key,
+postgres(# first_name varchar(50) not null,
+postgres(# last_name varchar(50)not null,
+postgres(# age int not null,
+postgres(# emaill varchar(150)unique
+postgres(# );
+CREATE TABLE
+postgres=# insert into employee(
+postgres(# first_name,last_name,age,emaill)
+postgres-#  values('Matmusa','Abduvokhob uulu',21,'matmusa@gmaill.com'),
+postgres-#  ('Maksat','Tashtanov',34,'tashtanov@gmaill.com'),
+postgres-# ('Uulzhan','Tashtanova'42,'uulzhan@gmaill.com');
+ОШИБКА:  ошибка синтаксиса (примерное положение: "42")
+СТРОКА 5: ('Uulzhan','Tashtanova'42,'uulzhan@gmaill.com');
+                                 ^
+postgres=# insert into employee(
+postgres(# first_name,last_name,age,emaill
+postgres(#  values('Matmusa','Abduvokhob uulu',21,'matmusa@gmaill.com'),
+postgres(#  ('Maksat','Tashtanov',34,'tashtanov@gmaill.com'),
+postgres(#  ('Uulzhan','Tashtanova',42,'uulzhan@gmaill.com');
+postgres(# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: "values")
+СТРОКА 3:  values('Matmusa','Abduvokhob uulu',21,'matmusa@gmaill.com')...
+           ^
+postgres=# insert into employee(
+postgres(#  first_name,last_name,age,emaill)
+postgres-#  values('Matmusa','Abduvokhob uulu',21,'matmusa@gmaill.com'),
+postgres-#   ('Maksat','Tashtanov',34,'tashtanov@gmaill.com'),
+postgres-#  ('Uulzhan','Tashtanova',42,'uulzhan@gmaill.com');
+INSERT 0 3
+postgres=# create table car(
+postgres(# id serial primary key,
+postgres(# brand varchar(50),
+postgres(# name varchar (50),
+postgres(# price int not null);
+CREATE TABLE
+postgres=# insert into car(brand,name,price)
+postgres-# values('Porshe','McLaren',500000),
+postgres-# ('BMW','x5',56000),
+postgres-# ('Tesla','x',45000),
+postgres-# ('Mersedes-benz','gelent-Wagen',100000);
+INSERT 0 4
+postgres=# create table animal(id serial primary key,
+postgres(# name varchar(50)not null,
+postgres(# place varchar(50) not null,
+postgres(# age int not null);
+CREATE TABLE
+postgres=# insert into animal(
+postgres(# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+СТРОКА 2: );
+          ^
+postgres=# insert into animal(name,place,age)
+postgres-# values('lion','Africa',12)
+postgres-# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+СТРОКА 3: );
+          ^
+postgres=# insert into animal((name,place,age)
+postgres(# values('lion','Afirica',12),
+postgres(# ('Kengoroo','Australia,10),
+postgres'# );
+postgres'# );
+postgres'# ');
+postgres(# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: "name")
+СТРОКА 1: insert into animal((name,place,age)
+                              ^
+postgres=# insert into animal(name,place,age)
+postgres-# values ('lion','Africa',12),
+postgres-# ('Kengoroo','Australia',10),
+postgres-# ('monkey','China',4);
+INSERT 0 3
+postgres=# create table house(id serial primary key,
+postgres(# adress varchar(50)not null,
+postgres(# live_in_house int references employee (id));
+CREATE TABLE
+postgres=# insert into house( adress, live_in_house)
+postgres-# values('Wall Street 23',1),
+postgres-# ('Brithon bitch 34',2),
+postgres-# ('Detroid 345,3);
+postgres'# '0;
+postgres(# 0;
+postgres(# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: "0")
+СТРОКА 5: '0;
+           ^
+postgres=#  insert into house( adress, live_in_house)
+postgres-#  values('Wall Street 23',1),
+postgres-#  ('Brithon bitch 34',2),
+postgres-# ('Detroid 345',3);
+INSERT 0 3
+postgres=# \dt
+              ╤яшёюъ юЄэю°хэшщ
+ ╤їхьр  |     ╚ь       |   ╥шя   | ┬ырфхыхЎ
+--------+--------------+---------+----------
+ public | animal       | ЄрсышЎр | postgres
+ public | area         | ЄрсышЎр | postgres
+ public | areas        | ЄрсышЎр | postgres
+ public | capital      | ЄрсышЎр | postgres
+ public | car          | ЄрсышЎр | postgres
+ public | client       | ЄрсышЎр | postgres
+ public | country      | ЄрсышЎр | postgres
+ public | coutry       | ЄрсышЎр | postgres
+ public | districts    | ЄрсышЎр | postgres
+ public | earth        | ЄрсышЎр | postgres
+ public | employee     | ЄрсышЎр | postgres
+ public | galaxy       | ЄрсышЎр | postgres
+ public | house        | ЄрсышЎр | postgres
+ public | neighborhood | ЄрсышЎр | postgres
+ public | people       | ЄрсышЎр | postgres
+ public | planet       | ЄрсышЎр | postgres
+ public | products     | ЄрсышЎр | postgres
+ public | region       | ЄрсышЎр | postgres
+ public | regions      | ЄрсышЎр | postgres
+ public | salesman     | ЄрсышЎр | postgres
+ public | shops        | ЄрсышЎр | postgres
+ public | star_systems | ЄрсышЎр | postgres
+ public | students     | ЄрсышЎр | postgres
+ public | universe     | ЄрсышЎр | postgres
+ public | village      | ЄрсышЎр | postgres
+(25 ёЄЁюъ)
+
+
+postgres=#  create table zoopark(id serial primary key,
+postgres(# name varchar(50) not null,
+postgres(# adress varchar(50) not null,
+postgres(# id_of_animals int references animal(id));
+CREATE TABLE
+postgres=# insert into zoopark(name,adress,id_of_animals)
+postgres-# values('zoo world','chika street',2),
+postgres-# ('zoo mir','blackberry street 3',1),
+postgres-# ('exzotic','Centukcy street',3);
+INSERT 0 3
+postgres=# create table driver(id serial primary key,
+postgres(# name varchar(50)not null,
+postgres(# id_of_car int references car(id));
+CREATE TABLE
+postgres=# insert into driver(name,id_of_car)
+postgres-# c
+postgres-# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: "c")
+СТРОКА 2: c
+          ^
+postgres=# insert into driver(name,id_of_car)
+postgres-# values('Marat Maratov',1),
+postgres-# ('Samat Samatov',2),
+postgres-# ('Murat Muratov',3),
+postgres-# ('Turat Turatov',4);
+INSERT 0 4
+postgres=# create table football_club(id serial primary key,
+postgres(# name varchar(50)not null,
+postgres(# cauntry varchar(50) not null,
+postgres(# name_of_stadion varchar(50)not null);
+CREATE TABLE
+postgres=# insert into football_club(name,cauntry,name_of_stadion)
+postgres-# values('Liverpool','England','Anfield'),
+postgres-# ('Real-Madrid','Espania','Santiogo-Barnobey'),
+postgres-# ('Borussia','German','Signal Iduna Park'),
+postgres-# ('Mancity','England','Etihad');
+INSERT 0 4
+postgres=# create table footballer(id serial primary key,
+postgres(# name varchar(50)not null,
+postgres(# age int not null,
+postgres(# country varchar(50)not null,
+postgres(# id_of_club int references football_club(id));
+CREATE TABLE
+postgres=# insert into footballer(name,coutry,id_of_club)
+postgres-# values ('Salah','Egypt',1),
+postgres-# ('Benzema','France',2),
+postgres-# ('Reys','German',3),
+postgres-# ('Mahrez','Algeria',4);
+ОШИБКА:  столбец "coutry" в таблице "footballer" не существует
+СТРОКА 1: insert into footballer(name,coutry,id_of_club)
+                                      ^
+postgres=# insert into footballer(name,cautry,id_of_club)
+postgres-#  values ('Salah','Egypt',1),
+postgres-# ('Benzema','France',2),
+postgres-#  ('Reys','German',3),
+postgres-# ('Mahrez','Algeria',4);
+ОШИБКА:  столбец "cautry" в таблице "footballer" не существует
+СТРОКА 1: insert into footballer(name,cautry,id_of_club)
+                                      ^
+postgres=# insert into footballer(name,country,id_of_club)
+postgres-# values ('Salah','Egypt',1),
+postgres-#  ('Benzema','France',2),
+postgres-#  ('Reys','German',3),
+postgres-#  ('Mahrez','Algeria',4);
+ОШИБКА:  значение NULL в столбце "age" отношения "footballer" нарушает ограничение NOT NULL
+ПОДРОБНОСТИ:  Ошибочная строка содержит (1, Salah, null, Egypt, 1).
+postgres=#  insert into footballer(name,age,country,id_of_club)
+postgres-#  values ('Salah',32,'Egypt',1),
+postgres-# ('Benzema',35,'France',2),
+postgres-# ('Reys',35,'German',3),
+postgres-#  ('Mahrez',30,'Algeria',4);
+INSERT 0 4
+postgres=# create table flowers(id serial primery key,
+postgres(# name (varchar(50)not null,
+postgres(# color varchar(50) not null,
+postgres(# price int not null);
+postgres(# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: "primery")
+СТРОКА 1: create table flowers(id serial primery key,
+                                         ^
+postgres=# create table flowers(id serial primary key,
+postgres(#  name (varchar(50)not null,
+postgres(# color varchar(50) not null,
+postgres(#  price int not null);
+postgres(# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: "(")
+СТРОКА 2:  name (varchar(50)not null,
+                ^
+postgres=# create table flowers((id serial primery key,
+postgres(#   name (varchar(50) not null,
+postgres(# color varchar(50) not null,
+postgres(# price int not null
+postgres(# );
+postgres(# );
+postgres(# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: "(")
+СТРОКА 1: create table flowers((id serial primery key,
+                               ^
+postgres=# create table flowers (id serial primary key,
+postgres(# name varchar(50) not null,
+postgres(# color varchar(50) not null,
+postgres(# price int not null
+postgres(# );
+CREATE TABLE
+postgres=# insert into flowers(name,color,price)
+postgres-# values('Rose','red',300),
+postgres-# ('Tulip','pirple',150),
+postgres-# ('Lily','white',390);
+INSERT 0 3
+postgres=#
